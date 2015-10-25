@@ -7,7 +7,18 @@ describe('ToDoListController', function() {
     ctrl = $controller('ToDoListController');
   }));
 
-  it('initialises with an empty list', function() {
-    expect(ctrl.listItems.length).toEqual(0);
+  describe('displaying task items', function() {
+    var tasks = [
+      {
+        task: "Buy eggs",
+      }
+    ];
+
+    it('displays list of tasks', function() {
+      expect(ctrl.activeTaskList).toEqual(tasks);
+    });
+
+
   });
+
 });

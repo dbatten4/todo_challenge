@@ -2,6 +2,10 @@ toDoList.controller('ToDoListController', [function() {
 
   var self = this;
 
-  self.listItems = [];
+  self.activeTaskList = [
+    {
+      task: "Buy eggs"
+    }
+  ];
 
 }]);
