@@ -20,8 +20,10 @@ toDoList.controller('ToDoListController', [function() {
   };
 
   self.completeTask = function(task) {
-    task.active = false;
-    self.completedTaskList.push(task);
+    if(task.active = true) {
+      task.active = false;
+      self.completedTaskList.push(task);
+    }
   };
 
   self.deleteActiveTask = function(task) {
@@ -35,6 +37,12 @@ toDoList.controller('ToDoListController', [function() {
     if(task.active == false) {
       var toDelete = self.taskList.indexOf(task);
       self.completedTaskList.splice(toDelete, 1);
+    };
+  };
+
+  self.reactivateTask = function(task) {
+    if(task.active == false) {
+      task.active = true;
     };
   };
 

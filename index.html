@@ -14,7 +14,7 @@
 
   <body ng-controller="ToDoListController as toDoCtrl">
     <ul>
-      <li ng-repeat="task in toDoCtrl.activeTaskList">
+      <li ng-repeat="task in toDoCtrl.taskList">
         {{ task.taskContent }}
       </li>
     </ul>

@@ -10,11 +10,11 @@ describe('ToDoListController', function() {
   describe('adding and displaying task items', function() {
     var tasks = [
       {
-      taskContent: "Buy eggs", 
+      taskContent: 'Buy eggs', 
       active: true
     },
     {
-      taskContent: "Buy bread", 
+      taskContent: 'Buy bread', 
       active: true
     }
     ];
@@ -47,6 +47,16 @@ describe('ToDoListController', function() {
       ctrl.deleteCompletedTask(ctrl.completedTaskList[0]);
       expect(ctrl.completedTaskList.length).toEqual(0);
     })
+  });
+
+  describe('reactivating tasks', function() {
+
+    it('can reactivate a completed task', function() {
+      ctrl.completeTask(ctrl.taskList[0]);
+      ctrl.reactivateTask(ctrl.taskList[0]);
+      expect(ctrl.taskList[0].active).toBe(true);
+    })
+
   });
 
 
