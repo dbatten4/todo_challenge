@@ -4,7 +4,8 @@
   <head>
     <meta charset="utf-8">
     <title>To Do</title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="public/style.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -17,19 +18,16 @@
     <div ng-repeat="task in toDoCtrl.taskList">
       <div ng-show="task.active">
         {{ task.taskContent }}
-        <form action="#">
-          <input ng-click="toDoCtrl.completeTask(task)" type="submit" value="Completed">
-          <input ng-click="toDoCtrl.deleteTask(task)" type="submit" value="Delete">
-        </form>
+        <a href="#" ng-click="toDoCtrl.completeTask(task)">Completed</a>
+        <a href="#" ng-click="toDoCtrl.deleteTask(task)">Delete</a>
       </div>
     </div>
     Completed Tasks
     <div ng-repeat="task in toDoCtrl.taskList">
       <div ng-hide="task.active">
         {{ task.taskContent }}
-        <form action="#">
-          <input ng-click="toDoCtrl.deleteTask(task)" type="submit" value="Delete">
-        </form>
+        <a href="#" ng-click="toDoCtrl.reactivateTask(task)">Reactivate</a>
+        <a href="#" ng-click="toDoCtrl.deleteTask(task)">Delete</a>
       </div>
     </div>
   </body>
