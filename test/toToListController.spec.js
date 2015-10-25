@@ -7,10 +7,10 @@ describe('ToDoListController', function() {
     ctrl = $controller('ToDoListController');
   }));
 
-  describe('displaying task items', function() {
+  describe('adding and displaying task items', function() {
     var tasks = [
       {
-        task: "Buy eggs",
+        taskContent: "Buy eggs",
       }
     ];
 
@@ -18,7 +18,12 @@ describe('ToDoListController', function() {
       expect(ctrl.activeTaskList).toEqual(tasks);
     });
 
+    it('can add a task to the list of active tasks', function() {
+      ctrl.addTask("Buy milk");
+      expect(ctrl.activeTaskList[1].taskContent).toContain("Buy milk");
+    })
 
   });
+
 
 });

@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en" ng-app="toDoList">
+<html lang="en" ng-app="ToDoList">
   <head>
     <meta charset="utf-8">
     <title>To Do</title>
@@ -13,6 +13,10 @@
   </head>
 
   <body ng-controller="ToDoListController as toDoCtrl">
-
+    <ul>
+      <li ng-repeat="task in toDoCtrl.activeTaskList">
+        {{ task.taskContent }}
+      </li>
+    </ul>
   </body>
 </html>

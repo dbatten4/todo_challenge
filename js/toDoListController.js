@@ -4,8 +4,12 @@ toDoList.controller('ToDoListController', [function() {
 
   self.activeTaskList = [
     {
-      task: "Buy eggs"
+      taskContent: "Buy eggs"
     }
   ];
+
+  self.addTask = function(task) {
+    self.activeTaskList.push({taskContent: task});
+  };
 
 }]);
