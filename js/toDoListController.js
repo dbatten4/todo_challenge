@@ -25,10 +25,17 @@ toDoList.controller('ToDoListController', [function() {
   };
 
   self.deleteActiveTask = function(task) {
-    // if(task.active == true) {
+    if(task.active == true) {
       var toDelete = self.taskList.indexOf(task);
       self.taskList.splice(toDelete, 1);
-    // };
+    };
+  };
+
+  self.deleteCompletedTask = function(task) {
+    if(task.active == false) {
+      var toDelete = self.taskList.indexOf(task);
+      self.completedTaskList.splice(toDelete, 1);
+    };
   };
 
 

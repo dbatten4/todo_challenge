@@ -41,6 +41,12 @@ describe('ToDoListController', function() {
       ctrl.deleteActiveTask(ctrl.taskList[0]);
       expect(ctrl.taskList[0].taskContent).not.toContain("Buy eggs");
     })
+
+    it('can delete a completed task', function() {
+      ctrl.completeTask(ctrl.taskList[0]);
+      ctrl.deleteCompletedTask(ctrl.completedTaskList[0]);
+      expect(ctrl.completedTaskList.length).toEqual(0);
+    })
   });
 
 
