@@ -2,16 +2,17 @@ toDoList.controller('ToDoListController', [function() {
 
   var self = this;
 
-  self.activeTaskList = [
+  self.taskList = [
     {
-      taskContent: "Buy eggs"
+      taskContent: "Buy eggs", 
+      active: true
     }
   ];
 
   self.completedTaskList = [];
 
   self.addTask = function(task) {
-    self.activeTaskList.push({taskContent: task});
+    self.taskList.push({taskContent: task});
   };
 
   self.completeTask = function(task) {

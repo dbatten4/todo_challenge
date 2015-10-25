@@ -11,16 +11,17 @@ describe('ToDoListController', function() {
     var tasks = [
       {
         taskContent: "Buy eggs",
+        active: true
       }
     ];
 
     it('displays list of tasks', function() {
-      expect(ctrl.activeTaskList).toEqual(tasks);
+      expect(ctrl.taskList).toEqual(tasks);
     });
 
     it('can add a task to the list of active tasks', function() {
       ctrl.addTask("Buy milk");
-      expect(ctrl.activeTaskList[1].taskContent).toContain("Buy milk");
+      expect(ctrl.taskList[1].taskContent).toContain("Buy milk");
     });
   });
 
@@ -28,11 +29,12 @@ describe('ToDoListController', function() {
     var tasks = [
       {
         taskContent: "Buy eggs",
+        active: true
       }
     ];
 
     it('can complete a task', function() {
-      ctrl.completeTask(ctrl.activeTaskList[0]);
+      ctrl.completeTask(ctrl.taskList[0]);
       expect(ctrl.completedTaskList[0].taskContent).toContain("Buy eggs");
     });
   });
