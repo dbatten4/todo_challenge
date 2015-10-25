@@ -42,14 +42,14 @@ describe('ToDoListController', function() {
     });
 
     it('can delete an active task', function() {
-      ctrl.deleteTask(ctrl.taskList[0]);
+      ctrl.deleteActiveTask(ctrl.taskList[0]);
       expect(ctrl.taskList[0].taskContent).not.toContain("Buy eggs");
     });
 
     it('can delete a completed task', function() {
       ctrl.completeTask(ctrl.taskList[0]);
-      ctrl.deleteTask(ctrl.taskList[0]);
-      expect(ctrl.taskList[0].taskContent).not.toContain("Buy eggs");
+      ctrl.deleteCompletedTask(ctrl.taskList[0]);
+      expect(ctrl.completedTaskList.length).toEqual(0);
     });
 
     it('can delete all complete tasks', function() {

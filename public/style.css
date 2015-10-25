@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  background-color: #f1f8ff;
 }
 
 img {
@@ -20,9 +21,9 @@ img {
 
 #reactivate {
   max-width: 29px;
-  max-height: 26px;
-  padding-right: 17px;
-  margin-top: -4px;  
+  max-height: 23px;
+  padding-right: 18px;
+  margin-top: -2px;  
 }
 
 #plus {
@@ -39,16 +40,20 @@ img {
 }
 
 .to_do_textarea {
-  border-style: none solid solid none;
-  border-width: medium 0px 1px medium;
+  border-style: none;
   outline: none;
   resize: none;
   font-size: 100%;
+  margin-left: 5px;
+  width: 90%;
+  overflow: auto;
+  background-color: #f1f8ff;
 }
 
 .add_item {
   display: inline-block;
   width: 100%;
+  margin-top: 10px;
 }
 
 .task_item {
@@ -56,6 +61,7 @@ img {
   width: 100%;
   height: 20px;
   padding: 10px;
+  margin-left: 0px;
 }
 
 #active {
@@ -70,5 +76,11 @@ img {
 
 .icon {
   float: right;
+}
+
+#delete_all {
+  text-decoration: none;
+  background-color: #ff6666;
+
 }
 
