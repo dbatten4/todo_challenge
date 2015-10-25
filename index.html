@@ -13,10 +13,24 @@
   </head>
 
   <body ng-controller="ToDoListController as toDoCtrl">
-    <ul>
-      <li ng-repeat="task in toDoCtrl.taskList">
+    Active Tasks
+    <div ng-repeat="task in toDoCtrl.taskList">
+      <div ng-show="task.active">
         {{ task.taskContent }}
-      </li>
-    </ul>
+        <form action="#">
+          <input ng-click="toDoCtrl.completeTask(task)" type="submit" value="Completed">
+          <input ng-click="toDoCtrl.deleteTask(task)" type="submit" value="Delete">
+        </form>
+      </div>
+    </div>
+    Completed Tasks
+    <div ng-repeat="task in toDoCtrl.taskList">
+      <div ng-hide="task.active">
+        {{ task.taskContent }}
+        <form action="#">
+          <input ng-click="toDoCtrl.deleteTask(task)" type="submit" value="Delete">
+        </form>
+      </div>
+    </div>
   </body>
 </html>

@@ -33,20 +33,25 @@ describe('ToDoListController', function() {
 
     it('can complete a task', function() {
       ctrl.completeTask(ctrl.taskList[0]);
-      expect(ctrl.completedTaskList[0].taskContent).toContain("Buy eggs");
       expect(ctrl.taskList[0].active).toBe(false);
     });
 
     it('can delete an active task', function() {
-      ctrl.deleteActiveTask(ctrl.taskList[0]);
+      ctrl.deleteTask(ctrl.taskList[0]);
       expect(ctrl.taskList[0].taskContent).not.toContain("Buy eggs");
-    })
+    });
 
     it('can delete a completed task', function() {
       ctrl.completeTask(ctrl.taskList[0]);
-      ctrl.deleteCompletedTask(ctrl.completedTaskList[0]);
+      ctrl.deleteTask(ctrl.taskList[0]);
+      expect(ctrl.taskList[0].taskContent).not.toContain("Buy eggs");
+    });
+
+    it('can delete all complete tasks', function() {
+      ctrl.completeTask(ctrl.taskList[0]);
+      ctrl.deleteAllCompletedTasks();
       expect(ctrl.completedTaskList.length).toEqual(0);
-    })
+    });
   });
 
   describe('reactivating tasks', function() {
@@ -55,7 +60,7 @@ describe('ToDoListController', function() {
       ctrl.completeTask(ctrl.taskList[0]);
       ctrl.reactivateTask(ctrl.taskList[0]);
       expect(ctrl.taskList[0].active).toBe(true);
-    })
+    });
 
   });
 
