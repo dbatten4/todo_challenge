@@ -10,9 +10,13 @@ describe('ToDoListController', function() {
   describe('adding and displaying task items', function() {
     var tasks = [
       {
-        taskContent: "Buy eggs",
-        active: true
-      }
+      taskContent: "Buy eggs", 
+      active: true
+    },
+    {
+      taskContent: "Buy bread", 
+      active: true
+    }
     ];
 
     it('displays list of tasks', function() {
@@ -21,22 +25,22 @@ describe('ToDoListController', function() {
 
     it('can add a task to the list of active tasks', function() {
       ctrl.addTask("Buy milk");
-      expect(ctrl.taskList[1].taskContent).toContain("Buy milk");
+      expect(ctrl.taskList[2].taskContent).toContain("Buy milk");
     });
   });
 
   describe('completing and removing tasks', function() {
-    var tasks = [
-      {
-        taskContent: "Buy eggs",
-        active: true
-      }
-    ];
 
     it('can complete a task', function() {
       ctrl.completeTask(ctrl.taskList[0]);
       expect(ctrl.completedTaskList[0].taskContent).toContain("Buy eggs");
+      expect(ctrl.taskList[0].active).toBe(false);
     });
+
+    it('can delete an active task', function() {
+      ctrl.deleteActiveTask(ctrl.taskList[0]);
+      expect(ctrl.taskList[0].taskContent).not.toContain("Buy eggs");
+    })
   });
 
 
