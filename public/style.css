@@ -1,3 +1,74 @@
 body {
   font-family: sans-serif;
 }
+
+img {
+  height: auto; 
+  width: auto; 
+}
+
+#tick {
+  max-width: 32px;
+  max-height: 24px;
+  padding-right: 13px;
+}
+
+#bin {
+  max-width: 30px;
+  max-height: 21px;
+}
+
+#reactivate {
+  max-width: 29px;
+  max-height: 26px;
+  padding-right: 17px;
+  margin-top: -4px;  
+}
+
+#plus {
+  max-width: 29px;
+  max-height: 23px;
+  margin-right: -13px;
+}
+
+.central_divide {
+  position: absolute;
+  left: 25%;
+  margin-right: -50%;
+  width: 50%;
+}
+
+.to_do_textarea {
+  border-style: none solid solid none;
+  border-width: medium 0px 1px medium;
+  outline: none;
+  resize: none;
+  font-size: 100%;
+}
+
+.add_item {
+  display: inline-block;
+  width: 100%;
+}
+
+.task_item {
+  display: inline-block;
+  width: 100%;
+  height: 20px;
+  padding: 10px;
+}
+
+#active {
+  background-color: #ffc285;
+}
+
+#completed {
+  background-color: #99e699;
+  text-decoration: line-through;
+  color: grey;
+}
+
+.icon {
+  float: right;
+}
+

@@ -3,7 +3,7 @@
 <html lang="en" ng-app="ToDoList">
   <head>
     <meta charset="utf-8">
-    <title>To Do</title>
+    <title>To Do List</title>
     <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"> -->
     <link rel="stylesheet" href="public/style.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -14,20 +14,27 @@
   </head>
 
   <body ng-controller="ToDoListController as toDoCtrl">
-    Active Tasks
-    <div ng-repeat="task in toDoCtrl.taskList">
-      <div ng-show="task.active">
-        {{ task.taskContent }}
-        <a href="#" ng-click="toDoCtrl.completeTask(task)">Completed</a>
-        <a href="#" ng-click="toDoCtrl.deleteTask(task)">Delete</a>
+    <div class="central_divide">
+      <div class="add_item">
+        <form action="#">
+          <textarea ng-model="taskContent" cols="20" rows="1" placeholder="Add a new task" class="to_do_textarea">
+          </textarea>
+          <a href="#" ng-click="toDoCtrl.addTask(taskContent)" class="icon"><img src="public/images/plus.png" id="plus"></a>
+        </form>
       </div>
-    </div>
-    Completed Tasks
-    <div ng-repeat="task in toDoCtrl.taskList">
-      <div ng-hide="task.active">
-        {{ task.taskContent }}
-        <a href="#" ng-click="toDoCtrl.reactivateTask(task)">Reactivate</a>
-        <a href="#" ng-click="toDoCtrl.deleteTask(task)">Delete</a>
+      <div ng-repeat="task in toDoCtrl.taskList">
+        <div ng-show="task.active" class="task_item" id="active">
+          {{ task.taskContent }}
+          <a href="#" ng-click="toDoCtrl.deleteTask(task)" class="icon"><img src="public/images/bin.png" id="bin"></a>
+          <a href="#" ng-click="toDoCtrl.completeTask(task)" class="icon"><img src="public/images/tick.png" id="tick"></a>
+        </div>
+      </div>
+      <div ng-repeat="task in toDoCtrl.taskList">
+        <div ng-hide="task.active" class="task_item" id="completed">
+          {{ task.taskContent }}
+          <a href="#" ng-click="toDoCtrl.deleteTask(task)" class="icon"><img src="public/images/bin.png" id="bin"></a>
+          <a href="#" ng-click="toDoCtrl.reactivateTask(task)" class="icon"><img src="public/images/reactivate.png" id="reactivate"></a>
+        </div>
       </div>
     </div>
   </body>

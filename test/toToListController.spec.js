@@ -27,6 +27,11 @@ describe('ToDoListController', function() {
       ctrl.addTask("Buy milk");
       expect(ctrl.taskList[2].taskContent).toContain("Buy milk");
     });
+
+    it('new tasks have default value active', function() {
+      ctrl.addTask("Buy milk");
+      expect(ctrl.taskList[2].active).toBe(true);
+    })
   });
 
   describe('completing and removing tasks', function() {
