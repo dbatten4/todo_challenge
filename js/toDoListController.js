@@ -8,8 +8,14 @@ toDoList.controller('ToDoListController', [function() {
     }
   ];
 
+  self.completedTaskList = [];
+
   self.addTask = function(task) {
     self.activeTaskList.push({taskContent: task});
+  };
+
+  self.completeTask = function(task) {
+    self.completedTaskList.push(task);
   };
 
 }]);
