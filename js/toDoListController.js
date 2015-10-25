@@ -17,6 +17,7 @@ toDoList.controller('ToDoListController', [function() {
 
   self.addTask = function(task) {
     self.taskList.push({taskContent: task, active: true});
+    document.getElementById('to_do_text').value='';
   };
 
   self.completeTask = function(task) {

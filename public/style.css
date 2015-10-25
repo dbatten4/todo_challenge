@@ -39,7 +39,7 @@ img {
   width: 50%;
 }
 
-.to_do_textarea {
+#to_do_text {
   border-style: none;
   outline: none;
   resize: none;
