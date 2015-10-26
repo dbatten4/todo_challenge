@@ -26,6 +26,7 @@
     "protractor": "^2.5.1"
   },
   "dependencies": {
+    "hover.css": "^2.0.2",
     "http-server": "^0.8.5"
   }
 }

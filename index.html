@@ -23,21 +23,21 @@
         </form>
       </div>
       <div ng-repeat="task in toDoCtrl.taskList">
-        <div ng-show="task.active" class="task_item" id="active">
+        <div ng-show="task.active" class="task_item hvr-grow" id="active">
           {{ task.taskContent }}
           <a href="#" ng-click="toDoCtrl.deleteActiveTask(task)" class="icon"><img src="public/images/bin.png" id="bin"></a>
           <a href="#" ng-click="toDoCtrl.completeTask(task)" class="icon"><img src="public/images/tick.png" id="tick"></a>
         </div>
       </div>
       <div ng-repeat="task in toDoCtrl.completedTaskList">
-        <div ng-hide="task.active" class="task_item" id="completed">
+        <div ng-hide="task.active" class="task_item hvr-grow" id="completed">
           {{ task.taskContent }}
           <a href="#" ng-click="toDoCtrl.deleteCompletedTask(task)" class="icon"><img src="public/images/bin.png" id="bin"></a>
           <a href="#" ng-click="toDoCtrl.reactivateTask(task)" class="icon"><img src="public/images/reactivate.png" id="reactivate"></a>
         </div>
       </div>
       <div ng-show="toDoCtrl.anyCompleted()">
-        <a href="#" ng-click="toDoCtrl.deleteAllCompletedTasks()" class="task_item" id="delete_all">Delete All Completed Tasks</a>
+        <a href="#" ng-click="toDoCtrl.deleteAllCompletedTasks()" class="task_item hvr-grow" id="delete_all">Delete All Completed Tasks</a>
       </div>
     </div>
   </body>
