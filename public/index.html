@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="ToDoList">
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <!--script src="../bower_components/jquery/dist/jquery.js"></script-->
+    <script src="../bower_components/angular/angular.js"></script>
+    <!--script src="../bower_components/angular-resource/angular-resource.js"></script-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!--script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script-->
+    <script src="app.js"></script>
+    <script src="toDoListController.js"></script>
+  </head>
+
+  <body ng-controller="ToDoListController as toDoCtrl">
+    <div class="central_divide">
+      <div class="add_item">
+        <form action="#">
+          <input type="text" ng-model="taskContent" placeholder="Add a new task" id="to_do_text">
+          <a href="#" ng-click="toDoCtrl.addTask(taskContent)" class="icon"><img src="images/plus.png" id="plus"></a>
+        </form>
+      </div>
+      <div ng-repeat="task in toDoCtrl.taskList">
+        <div ng-show="task.active" class="task_item hvr-grow" id="active">
+          {{ task.taskContent }}
+          <a href="#" ng-click="toDoCtrl.deleteActiveTask(task)" class="icon"><img src="images/bin.png" id="bin"></a>
+          <a href="#" ng-click="toDoCtrl.completeTask(task)" class="icon"><img src="images/tick.png" id="tick"></a>
+        </div>
+      </div>
+      <div ng-repeat="task in toDoCtrl.completedTaskList">
+        <div ng-hide="task.active" class="task_item hvr-grow" id="completed">
+          {{ task.taskContent }}
+          <a href="#" ng-click="toDoCtrl.deleteCompletedTask(task)" class="icon"><img src="images/bin.png" id="bin"></a>
+          <a href="#" ng-click="toDoCtrl.reactivateTask(task)" class="icon"><img src="images/reactivate.png" id="reactivate"></a>
+        </div>
+      </div>
+      <div ng-show="toDoCtrl.anyCompleted()">
+        <a href="#" ng-click="toDoCtrl.deleteAllCompletedTasks()" class="task_item hvr-grow" id="delete_all">Delete All Completed Tasks</a>
+      </div>
+    </div>
+  </body>
+</html>

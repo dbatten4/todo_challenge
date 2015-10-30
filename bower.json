@@ -1,11 +1,11 @@
 {
-  "name": "todo_challenge_2",
+  "name": "todo_challenge",
   "homepage": "https://github.com/dbatten4/todo_challenge",
   "authors": [
     "Dom Batten <dominic.batten@googlemail.com>"
   ],
   "description": "",
-  "main": "",
+  "main": "server.js",
   "moduleType": [],
   "license": "MIT",
   "ignore": [

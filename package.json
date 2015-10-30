@@ -1,8 +1,8 @@
 {
-  "name": "todo_challenge_2",
+  "name": "todo_challenge",
   "version": "1.0.0",
   "description": "* Deadline: submit completed pull request by 9am on Monday * You may use whatever level of JavaScript you feel comfortable with - pure JS, jQuery, Angular, or whatever weird and wonderful framework you want to try. Extra points for DogeScript",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,7 +26,12 @@
     "protractor": "^2.5.1"
   },
   "dependencies": {
-    "hover.css": "^2.0.2",
-    "http-server": "^0.8.5"
+    "hover.css"  : "^2.0.2",
+    "http-server": "^0.8.5",
+    "express"    : "~4.7.2",
+    "mongoose"   : "~3.6.2",
+    "morgan"     : "~1.2.2",
+    "body-parser": "~1.5.2",
+    "method-override": "~2.1.2"
   }
 }
