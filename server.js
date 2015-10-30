@@ -5,7 +5,7 @@ var morgan     = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
-mongoose.connect('mongodb://<user>:<pass>@apollo.modulusmongo.net:27017/y3garedO');
+mongoose.connect('mongodb://localhost:27017/test');
 
 app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
 app.use(morgan('dev'));                                         // log every request to the console
@@ -15,7 +15,8 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 app.use(methodOverride());
 
 var Todo = mongoose.model('Todo', {
-  text : String
+  text   : String,
+  active : Boolean
 })
 
 app.get('/api/todos', function(req, res) {
@@ -28,7 +29,7 @@ app.get('/api/todos', function(req, res) {
 
 app.post('/api/todos', function(req, res) {
   Todo.create({
-    text   : req.body.taskContent,
+    text   : req.body.task,
     active : false
   }, function(err, todo) {
     if(err)
